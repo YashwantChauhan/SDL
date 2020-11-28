@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>Breezed HTML Bootstrap Template</title>
+
+    <!--
+
+Breezed Template
+
+https://templatemo.com/tm-543-breezed
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href={% static "assets/css/bootstrap.min.css" %}>
+
+    <link rel="stylesheet" type="text/css" href={% static "assets/css/font-awesome.css" %}>
+
+    <link rel="stylesheet" href={% static "assets/css/templatemo-breezed.css" %}>
+
+    <link rel="stylesheet" href={% static "assets/css/owl-carousel.css" %}>
+
+    <link rel="stylesheet" href={% static "assets/css/lightbox.css" %}>
+
+</head>
+<div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<body class="h-100">
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            INTRUSION DETECTION
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="nav-item"><a href="/" class="active">Home</a></li>
+                            <li class="nav-item">
+                                <a href="/Signup" class="nav-link-active">Sign in</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src={% static "assets/images/banner-bg.jpg" %} alt="">
+                    <div class="text-content">
+                              
+                        <div class="container h-100">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col-10 col-md-8 col-lg-6">
+                                    <!-- Form -->
+                                    <form method='POST'>
+                                        {% csrf_token %}
+                                        <h2>CREATE NEW ACCOUNT</h2><br>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Full Name</label>
+                                            <input type="text" class="form-control" id="Name" name="name"
+                                                placeholder="for example : Harish Kumar">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Email address</label>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                placeholder="name@example.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">User Name</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" name = "username"
+                                                placeholder="Yash123">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Password</label>
+                                            <input type="password" class="form-control" id="exampleFormControlInput1" name="password1">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Confirm Password</label>
+                                            <input type="password" class="form-control" id="exampleFormControlInput1" name="password2">
+                                               
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-dark">OK</button>
+                                    </form>
+                                    <br>
+                                    {% for message in messages %}
+                                    {% if message %}
+                                    <div class="alert alert-primary" role="alert">
+                                       {{message}}
+                                    </div>
+                                    
+                                    {% endif %}
+                                    {% endfor %}
+                                    
+            
+                                    <!-- Form end -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <!-- // Item -->
+
+        </div>
+    </div>
+
+    <!-- ***** Main Banner Area End ***** -->
+
+
+
+    <!-- jQuery -->
+    <script src={% static "assets/js/jquery-2.1.0.min.js" %}></script>
+
+    <!-- Bootstrap -->
+    <script src={% static "assets/js/popper.js" %}></script>
+    <script src={% static "assets/js/bootstrap.min.js" %}></script>
+
+    <!-- Plugins -->
+    <script src={% static "assets/js/owl-carousel.js" %}></script>
+    <script src={% static "assets/js/scrollreveal.min.js" %}></script>
+    <script src={% static "assets/js/waypoints.min.js" %}></script>
+    <script src={% static "assets/js/jquery.counterup.min.js" %}></script>
+    <script src={% static "assets/js/imgfix.min.js" %}></script>
+    <script src={% static "assets/js/slick.js" %}></script>
+    <script src={% static "assets/js/lightbox.js" %}></script>
+    <script src={% static "assets/js/isotope.js" %}></script>
+
+    <!-- Global Init -->
+    <script src={% static "assets/js/custom.js" %}></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
