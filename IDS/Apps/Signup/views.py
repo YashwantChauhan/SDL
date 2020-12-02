@@ -12,7 +12,7 @@ def signin( request ):
 
          if user is not None:
             auth.login( request , user )
-            return redirect('/')
+            return redirect('/Dashboard')
          else:
             messages.info( request , 'Invalid Credentials' )
             return redirect('/Signin')
@@ -38,10 +38,16 @@ def signup( request ):
             else:
                user = User.objects.create_user( username=username , password = password1 , email = email , first_name = name )
                user.save()
-               return redirect( '/' )
+               auth.login( request , user )
+               return redirect( '/Dashboard' )
          else:
             messages.info( request , ' Password Mismatch ' ) 
             return redirect('/Signup')
             
    else:
       return render( request , 'Signup.html' )
+
+
+def logout(request):
+   auth.logout(request)
+   return redirect('/')      
