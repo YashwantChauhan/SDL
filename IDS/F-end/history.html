@@ -56,14 +56,14 @@
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link" href="/Dashboard">
                 <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
+                Dashboard 
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="detect/">
+              <a class="nav-link" href="/Dashboard/detect/">
                 <span data-feather="file"></span>
                 Detect
               </a>
@@ -76,7 +76,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="">
                 <span data-feather="layers"></span>
                 Recommendations
               </a>
@@ -89,9 +89,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/Dashboard/history/">
+              <a class="nav-link active" href="#">
                 <span data-feather="watch"></span>
-                History
+                History <span class="sr-only">(current)</span>
               </a>
             </li>
 
@@ -103,62 +103,34 @@
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div
           class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2"> Dashboard</h1>
+          <h1 class="h2"> History</h1>
         </div>
-        <div class="jumbotron">
-          <h1 class="display-4">Check Out</h1>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
-          <hr class="my-4">
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-              <img src={% static "assets/images/card-1.jpg" %} class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        {% if context|length == 0 %}
+        <h3 class='text-center' > No Results </h3>
+        <h6 class='text-center' > Go to detect and start detecting </h6>
+        {% else %}
+
+        <div class="container">
+          <div class="list-group">
+
+           
+            {% for i in context reversed %}
+            <div class="list-group-item list-group-item-action"> 
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"> {{i.description}}</h5>
+                <small><br> {{i.updated}}</small>
               </div>
+              <p class="mb-1">DETECTED ATTACKS : {{i.result}}</p>
+              <small>RECOMMENDATION : {{i.recommendations}}</small>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-              <img src={% static "assets/images/card-2.jpg" %} class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-              <img src={% static "assets/images/card-3.jpg" %} class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-              <img src={% static "assets/images/card-1.jpg" %} class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+            {% endfor %}
+            
+       
           </div>
         </div>
+      
+        {% endif %}
 
 
 

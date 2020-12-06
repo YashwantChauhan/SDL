@@ -1,0 +1,295 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Dashboard Template · Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+  <!-- Bootstrap core CSS -->
+  <link href={% static "ex/assets/dist/css/bootstrap.min.css" %} rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  
+  <!-- Custom styles for this template -->
+  <link href={% static "ex/dashboard/dashboard.css" %} rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">{{user.first_name}}</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="/Signout">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/Dashboard">
+                <span data-feather="home"></span>
+                Dashboard
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Dashboard/detect/">
+                <span data-feather="file"></span>
+                Detect
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Dashboard/results">
+                <span data-feather="bar-chart-2"></span>
+                Results
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <span data-feather="layers"></span>
+                Recommendations <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Contact
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="watch"></span>
+                History
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2"> Dashboard</h1>
+        </div>
+        <br>
+        <h2 class="text-center underline" stylr="color:rgb(56, 50, 50) ;">IMMEDIATE STEPS</h2>
+        <br><br>
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active" id="list-settings-list" data-toggle="list"
+                href="#list-settings" role="tab" aria-controls="settings">General</a>
+              <a class="list-group-item list-group-item-action " id="list-home-list" data-toggle="list"
+                href="#list-home" role="tab" aria-controls="home">Host Level</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                href="#list-profile" role="tab" aria-controls="profile">Server Level</a>
+              <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                href="#list-messages" role="tab" aria-controls="messages">In the Organisation</a>
+
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="tab-content px-4 py-4" id="nav-tabContent" style="border: 1px solid rgb(170, 170, 170);">
+              <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                Radiation is often categorized as either ionizing or non-ionizing depending on the energy of the
+                radiated particles. Ionizing radiation carries more than 10 eV, which is enough to ionize atoms and
+                molecules and break chemical bonds. This is an important distinction due to the large difference in
+                harmfulness to living organisms. A common source of ionizing radiation is radioactive materials that
+                emit α, β, or γ radiation, consisting of helium nuclei, electrons or positrons, and photons,
+                respectively. Other sources include X-rays from medical radiography examinations and muons, mesons,
+                positrons, neutrons and other particles that constitute the secondary cosmic rays that are produced
+                after primary cosmic rays interact with Earth's atmosphere.
+
+                Gamma rays, X-rays and the higher energy range of ultraviolet light constitute the ionizing part of the
+                electromagnetic spectrum. The word "ionize" refers to the breaking of one or more electrons away from an
+                atom, an action that requires the relatively high energies that these electromagnetic waves supply.
+                Further down the spectrum, the non-ionizing lower energies of the lower ultraviolet spectrum cannot
+                ionize atoms, but can disrupt the inter-atomic bonds which form molecules, thereby breaking down
+                molecules rather than atoms; a good example of this is sunburn caused by long-wavelength solar
+                ultraviolet. The waves of longer wavelength than UV in visible light, infrared and microwave frequencies
+                cannot break bonds but can cause vibrations in the bonds which are sensed as heat. Radio wavelengths and
+                below generally are not regarded as harmful to biological systems. These are not sharp delineations of
+                the energies; there is some overlap in the effects of specific frequencies.[3]</div>
+              <div class="tab-pane fade " id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                Radiation is often categorized as either ionizing or non-ionizing depending on the energy of the
+                radiated particles. Ionizing radiation carries more than 10 eV, which is enough to ionize atoms and
+                molecules and break chemical bonds. This is an important distinction due to the large difference in
+                harmfulness to living organisms. A common source of ionizing radiation is radioactive materials that
+                emit α, β, or γ radiation, consisting of helium nuclei, electrons or positrons, and photons,
+                respectively. Other sources include X-rays from medical radiography examinations and muons, mesons,
+                positrons, neutrons and other particles that constitute the secondary cosmic rays that are produced
+                after primary cosmic rays interact with Earth's atmosphere.
+
+                Gamma rays, X-rays and the higher energy range of ultraviolet light constitute the ionizing part of the
+                electromagnetic spectrum. The word "ionize" refers to the breaking of one or more electrons away from an
+                atom, an action that requires the relatively high energies that these electromagnetic waves supply.
+                Further down the spectrum, the non-ionizing lower energies of the lower ultraviolet spectrum cannot
+                ionize atoms, but can disrupt the inter-atomic bonds which form molecules, thereby breaking down
+                molecules rather than atoms; a good example of this is sunburn caused by long-wavelength solar
+                ultraviolet. The waves of longer wavelength than UV in visible light, infrared and microwave frequencies
+                cannot break bonds but can cause vibrations in the bonds which are sensed as heat. Radio wavelengths and
+                below generally are not regarded as harmful to biological systems. These are not sharp delineations of
+                the energies; there is some overlap in the effects of specific frequencies.[3]</div>
+              <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                Radiation is often categorized as either ionizing or non-ionizing depending on the energy of the
+                radiated particles. Ionizing radiation carries more than 10 eV, which is enough to ionize atoms and
+                molecules and break chemical bonds. This is an important distinction due to the large difference in
+                harmfulness to living organisms. A common source of ionizing radiation is radioactive materials that
+                emit α, β, or γ radiation, consisting of helium nuclei, electrons or positrons, and photons,
+                respectively. Other sources include X-rays from medical radiography examinations and muons, mesons,
+                positrons, neutrons and other particles that constitute the secondary cosmic rays that are produced
+                after primary cosmic rays interact with Earth's atmosphere.
+
+                Gamma rays, X-rays and the higher energy range of ultraviolet light constitute the ionizing part of the
+                electromagnetic spectrum. The word "ionize" refers to the breaking of one or more electrons away from an
+                atom, an action that requires the relatively high energies that these electromagnetic waves supply.
+                Further down the spectrum, the non-ionizing lower energies of the lower ultraviolet spectrum cannot
+                ionize atoms, but can disrupt the inter-atomic bonds which form molecules, thereby breaking down
+                molecules rather than atoms; a good example of this is sunburn caused by long-wavelength solar
+                ultraviolet. The waves of longer wavelength than UV in visible light, infrared and microwave frequencies
+                cannot break bonds but can cause vibrations in the bonds which are sensed as heat. Radio wavelengths and
+                below generally are not regarded as harmful to biological systems. These are not sharp delineations of
+                the energies; there is some overlap in the effects of specific frequencies.[3]</div>
+              <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                Radiation is often categorized as either ionizing or non-ionizing depending on the energy of the
+                radiated particles. Ionizing radiation carries more than 10 eV, which is enough to ionize atoms and
+                molecules and break chemical bonds. This is an important distinction due to the large difference in
+                harmfulness to living organisms. A common source of ionizing radiation is radioactive materials that
+                emit α, β, or γ radiation, consisting of helium nuclei, electrons or positrons, and photons,
+                respectively. Other sources include X-rays from medical radiography examinations and muons, mesons,
+                positrons, neutrons and other particles that constitute the secondary cosmic rays that are produced
+                after primary cosmic rays interact with Earth's atmosphere.
+
+                Gamma rays, X-rays and the higher energy range of ultraviolet light constitute the ionizing part of the
+                electromagnetic spectrum. The word "ionize" refers to the breaking of one or more electrons away from an
+                atom, an action that requires the relatively high energies that these electromagnetic waves supply.
+                Further down the spectrum, the non-ionizing lower energies of the lower ultraviolet spectrum cannot
+                ionize atoms, but can disrupt the inter-atomic bonds which form molecules, thereby breaking down
+                molecules rather than atoms; a good example of this is sunburn caused by long-wavelength solar
+                ultraviolet. The waves of longer wavelength than UV in visible light, infrared and microwave frequencies
+                cannot break bonds but can cause vibrations in the bonds which are sensed as heat. Radio wavelengths and
+                below generally are not regarded as harmful to biological systems. These are not sharp delineations of
+                the energies; there is some overlap in the effects of specific frequencies.[3]</div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <h2 class="text-center underline" style="color:rgb(56, 50, 50) ;">RECOMMENDED STEPS</h2> <br>
+        <div class="container px-4 py-4" style="border: 1px solid rgb(170, 170, 170);">
+          <p>Radiation is often categorized as either ionizing or non-ionizing depending on the energy of the radiated
+            particles. Ionizing radiation carries more than 10 eV, which is enough to ionize atoms and molecules and
+            break chemical bonds. This is an important distinction due to the large difference in harmfulness to living
+            organisms. A common source of ionizing radiation is radioactive materials that emit α, β, or γ radiation,
+            consisting of helium nuclei, electrons or positrons, and photons, respectively. Other sources include X-rays
+            from medical radiography examinations and muons, mesons, positrons, neutrons and other particles that
+            constitute the secondary cosmic rays that are produced after primary cosmic rays interact with Earth's
+            atmosphere. Gamma rays, X-rays and the higher energy range of ultraviolet light constitute the ionizing part
+            of the electromagnetic spectrum. The word "ionize" refers to the breaking of one or more electrons away from
+            an atom, an action that requires the relatively high energies that these electromagnetic waves supply.
+            Further down the spectrum, the non-ionizing lower energies of the lower ultraviolet spectrum cannot ionize
+            atoms, but can disrupt the inter-atomic bonds which form molecules, thereby breaking down molecules rather
+            than atoms; a good example of this is sunburn caused by long-wavelength solar ultraviolet. The waves of
+            longer wavelength than UV in visible light, infrared and microwave frequencies cannot break bonds but can
+            cause vibrations in the bonds which are sensed as heat. Radio wavelengths and below generally are not
+            regarded as harmful to biological systems. These are not sharp delineations of the energies; there is some
+            overlap in the effects of specific frequencies.[3]</p>
+
+        </div>
+
+        <br><br><br>
+        <div class="container">
+          
+            <!-- Button trigger modal -->
+           
+           <button type="button" class="btn btn-primary text-allign :center;" data-toggle="modal"
+           data-target="#exampleModal">
+           Exit
+         </button>
+          
+        </div>
+        
+        <br><br><br>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Save Changes ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                You can access the saved results from your history
+              </div>
+              <div class="modal-footer">
+                <form action="/Dashboard/shistory/" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-secondary">Close</button>
+                </form>
+               
+                <form action="/Dashboard/history/" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                
+                </form>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </main>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src={% static "ex/assets/js/vendor/jquery.slim.min.js" %}><\/script>')</script>
+  <script src={% static "ex/assets/dist/js/bootstrap.bundle.min.js" %}></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src={% static "ex/dashboard/dashboard.js" %}></script>
+</body>
+
+</html>

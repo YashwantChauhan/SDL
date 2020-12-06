@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 from .forms import files_form
-from .models import files
+from .models import files,Recommend,Results,History,Contact
 from django.contrib.auth.decorators import login_required
 import csv
 import pandas as pd
 import joblib
+import numpy as np
 
 sc = joblib.load(r'Model/scaler')
 clfr = joblib.load(r'Model/learner')
@@ -67,6 +68,8 @@ def detect(request):
                     'dst_host_rerror_rate',
                     'dst_host_srv_rerror_rate',
                     'target' ]
+        Attacks = ""
+        jam = {}
         with open(obj.file_name.path , 'r' ) as f:
             reader = csv.reader(f)
 
@@ -98,12 +101,131 @@ def detect(request):
 
                     X = df
                     Y = clfr.predict(X)
+                    Y = np.array_str(Y)
+                    if Y not in jam:
+                        Attacks += Y + "-"
+                        jam[Y] = '1'
+                    
 
-                    print(Y)
 
-        obj.activated =True
+        Attacks = Attacks[:-1]           
+        obj.Results = Attacks
+        
         obj.save()
+        return redirect('/Dashboard/results' )
+
     return render(request,'detect.html',{'form':form})
 
 def results(request):
-    return render(request,'results.html')
+    obj = files.objects.get(activated=False)
+    val = list(obj.Results.split('-'))
+    s = "normal"
+    context = []
+    for i in val:
+        if i != "['normal']":
+            s = "attack"
+            obj_1 = Results.objects.get(key=i)
+            context.append(obj_1)
+            obj_1.activated=False
+            obj_1.save()
+
+    if s=="normal":
+        f = ['normal']
+        obj_1 = Results.objects.get(key=f)
+        context.append(obj_1)
+        obj_1.activated=False
+        obj_1.save()
+
+
+    return render(request,'results.html' , {'val' :context , 'action' : s } )
+
+def recommend(request):
+
+    obj = files.objects.get(activated=False)
+    val = obj.Results
+    obj_2 = Recommend.objects.get(name=val)
+    val_2 = obj_2.recommended_steps
+    obj_2.activated = False
+    obj_2.save()
+
+    return render(request,'recommend.html' , {'val' :val_2} )
+
+
+def history(request):
+
+    if request.method=='POST':
+
+        obj = files.objects.get(activated=False)
+        obj_2 = Recommend.objects.get(activated=False)
+        obj_3 = Results.objects.filter(activated=False)
+
+        result = ""
+
+        for i in obj_3:
+            val = i.name
+            result += val + ','
+            i.activated = True 
+            i.save()
+
+        result = result[:-1]
+        description = obj.describe
+        recommendations = obj_2.recommended_steps
+
+        obj.activated = True
+        obj_2.activated = True
+
+        obj.save()
+        obj_2.save()
+
+        history = History(result=result , description=description , recommendations=recommendations , user = request.user )
+
+        history.save()
+
+        return redirect('/Dashboard')
+
+    obj = History.objects.filter(user=request.user)
+    context = []
+
+    k = obj.count()-5
+    j = 0 
+    for i in obj:
+        if j>=k:
+            context.append(i)
+        else:
+            j += 1
+
+    return render(request , 'history.html' , {'context' : context })
+
+
+def shistory(request):
+    if request.method == 'POST':
+        obj = files.objects.get(activated=False)
+        obj.activated = True
+        obj.save()
+
+        obj_3 = Results.objects.filter(activated=False)
+        for i in obj_3:
+            i.activated = True 
+            i.save()
+
+        obj_2 = Recommend.objects.get(activated=False)
+        obj_2.activated=True
+        obj_2.save()
+
+
+        return redirect('/Dashboard')
+
+
+def contact(request):
+
+    obj = Contact.objects.all()
+    context = []
+
+    for i in obj:
+        context.append(i)
+
+    
+    return render(request , 'contact.html' , {'context':context})
+
+
+
