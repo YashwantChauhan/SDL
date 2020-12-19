@@ -5,3 +5,6 @@
 A Website based Intrusion Destection System(IDS) aimed towards reducing cost of IDS for small to mid-sized businesses. An easily accessible and reliable tool which provides solutions to all the security needs.
 
 ## ARCHITECTURE
+The Use-Cases of my Project is:
+ 
+1. **LOGIN**
