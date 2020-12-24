@@ -54,4 +54,4 @@ The Use-Cases of my Project are:
 
 
 
-<img src="https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/Architecture.PNG" width="450" height="350">
+<img src="https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/Architecture.PNG" width="550" height="400">
