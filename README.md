@@ -52,3 +52,5 @@ The Use-Cases of my Project are:
 
 ## ARCHIECTURE DIAGRAM ##
 
+
+![alt text](https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/assets/images/contact-info-02.png?raw=true
