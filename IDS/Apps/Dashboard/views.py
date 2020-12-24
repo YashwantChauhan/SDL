@@ -144,11 +144,10 @@ def recommend(request):
     obj = files.objects.get(activated=False)
     val = obj.Results
     obj_2 = Recommend.objects.get(name=val)
-    val_2 = obj_2.recommended_steps
     obj_2.activated = False
     obj_2.save()
 
-    return render(request,'recommend.html' , {'val' :val_2} )
+    return render(request,'recommend.html' , {'val' :obj_2} )
 
 
 def history(request):

@@ -65,7 +65,7 @@ class History(models.Model):
         return f"File id : {self.hist_id}"
 
 
-class Contact(models.Model):\
+class Contact(models.Model):
 
     
     contact_id = models.AutoField(primary_key=True)
