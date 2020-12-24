@@ -53,4 +53,4 @@ The Use-Cases of my Project are:
 ## ARCHIECTURE DIAGRAM ##
 
 
-![_Architecture Diagram_](https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/Architecture.PNG =250x250)
+![_Architecture Diagram_](https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/Architecture.PNG?v=4&s=200)
