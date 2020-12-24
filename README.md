@@ -57,9 +57,14 @@ The Use-Cases of my Project are:
 <img src="https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/Architecture.PNG" width="600" height="400">
 
 
-## Prototype ##
+## PROTOTYPE ##
 
 <img src="https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/index.PNG" width="500" height="300">
 <img src="https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/report1.PNG" width="500" height="350">
 <img src="https://github.com/YashwantChauhan/SDL/blob/main/IDS/static/Readme/report2.PNG" width="600" height="350">
+
+## REPORT ##
+
+The Complete report is uploaded and can be viwed from above.
+
 
