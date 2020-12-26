@@ -21,7 +21,7 @@ The Use-Cases of my Project are:
    
 2. **Upload File**
 
-   1. File is the 'Traffic Capture File' of one's Network. The format should be i .csv , can be achieved using Wireshark features.
+   1. File is the 'Traffic Capture File' of one's Network. The format should be in .csv , can be achieved using Wireshark features.
    2. File should contain required column/fields required for the algorithm functioning.
    3. The Webpage assosciated to this is the 'detect.html' and the coded function in the server is 'detect'.
         1. It contains a form to be filled with description, name, etc.
