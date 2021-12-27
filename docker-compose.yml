@@ -4,5 +4,3 @@ services:
   IDS:
     image: ids
     command: python manage.py runserver 0.0.0.0:$PORT
-    ports:
-      - 8000:8000
