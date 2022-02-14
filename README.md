@@ -4,10 +4,12 @@
 ## OVERVIEW
 A Website based Intrusion Destection System(IDS) aimed towards reducing cost of IDS for small to mid-sized businesses. An easily accessible and reliable tool which provides solutions to all the security needs. It works on the ML trained model and classifies data uploaded by the client into different categories, such as 'normal data', 'attack scenario'. It further gives subclassifications to attacks and provides relevant information and recommendations to deal with the problem. 
 
+It is deployed on Heroku and a CI/CD pipeline is implemented using Jenkins.
 ## TECHNOLOGIES USED
 - Language : Python
 - Back-end : Django 
 - Front-end : HTML/CSS/Java Script , Bootstrap
+- Heroku (For Deployment)
 
 ## ARCHITECTURE
 The Use-Cases of my Project are:
